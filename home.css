@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100&display=swap');
 html{
     background-color: rgb(255, 255, 255);
+    background-image: url(white-triangle-pattern-seamless-background-cover.jpg);
    
 }
 body{
@@ -79,23 +80,32 @@ color: #076cd1;
 h2{
     font-family: 'Poppins', sans-serif;
     position: absolute;
-    bottom: 500px;
+    font-size: 40px;
+    bottom: 520px;
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
 }
 h3{
     font-family: 'Poppins', sans-serif;
     position: absolute;
-    bottom: 460px;
+    font-size: 40px;
+    bottom: 450px;
     padding-left: 20px;
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
 }
 h3::first-letter{
     color: #076cd1;
-    font-size: 40px;
+    font-size: 55px;
 }
 h2::first-letter{
     color: #076cd1;
-    font-size: 40px;
+    font-size: 55px;
+}
+
+.photo{
+   position: absolute;
+   bottom: 25px;
+   right: 50px;
+   box-shadow:6px 6px 6px 6px rgba(0, 0, 0, 0.5) ;
 }
  section{
     position: relative;
