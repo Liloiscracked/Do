@@ -24,6 +24,25 @@ app.use(express.static('./login-signup'));
 app.use(express.static('./home'));
 
 
+app.post("/signin",(req,res)=>{
+  var email = req.body.email;
+  var password = req.body.password;
+
+  var data = {
+      "email" : email,
+      "password" : password
+  }
+  //condition is to be tested
+  if(db.collection('user').find(data) === null){
+  return res.redirect('Signin.html')
+}
+else{
+  //How to add message??
+  return res.redirect('Home.html');
+}
+
+})
+
 app.post("/sign_up",(req,res)=>{
   var username = req.body.username;
   var email = req.body.email;
