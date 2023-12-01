@@ -4,21 +4,55 @@ const express = require('express');
 
 // Create an instance of the express application
 const app = express();
+var bodyParser = require("body-parser")
+var mongoose = require("mongoose")
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
+
+mongoose.connect('mongodb+srv://lilo:123@cluster0.bonii93.mongodb.net/Do', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+var db = mongoose.connection;
+
+db.on('error', () => console.log("Error in Connecting to Database"));
+db.once('open', () => console.log("Connected to Database"))
 
 app.use(express.static('./login-signup'));
+app.use(express.static('./home'));
 
-// Define a route
-app.get('/', (req, res) => {
-    res.sendFile("/Users/medoaljoudi/Desktop/Web Project/login-signup/Signin.html");
-});
- app.get('/Sign_UP.html',(req,res)=>{
-     res.sendFile("/Users/medoaljoudi/Desktop/Web Project/Signin.html");
- });
 
-// Set the port to listen on
-const port = 3000;
+app.post("/sign_up",(req,res)=>{
+  var username = req.body.username;
+  var email = req.body.email;
+  var password = req.body.password;
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
-});
+  var data = {
+      "username": username,
+      "email" : email,
+      "password" : password
+  }
+
+  db.collection('users').insertOne(data,(err,collection)=>{
+      if(err){
+          throw err;
+      }
+      console.log("Record Inserted Successfully");
+  });
+
+  return res.redirect('Home.html')
+
+})
+
+
+app.get("/",(req,res)=>{
+  res.set({
+      "Allow-access-Allow-Origin": '*'
+  })
+  return res.redirect('Sign_UP.html');
+}).listen(3000);
+
+
+console.log("Listening on PORT 3000");

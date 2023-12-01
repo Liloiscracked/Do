@@ -34,6 +34,7 @@ const apiRequestJson = {
     llamaAPI.run(apiRequestJson)
       .then(response => {
         // Process the API response here
+        response.messages
       })
       .catch(error => {
         // Handle any errors here
