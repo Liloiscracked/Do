@@ -34,7 +34,7 @@ app.post("/sign_up",(req,res)=>{
       "email" : email,
       "password" : password
   }
-
+  if(db.collection('user').find(data) === null){
   db.collection('users').insertOne(data,(err,collection)=>{
       if(err){
           throw err;
@@ -43,6 +43,11 @@ app.post("/sign_up",(req,res)=>{
   });
 
   return res.redirect('Home.html')
+}
+else{
+  //How to add message??
+  return res.redirect('Sign_UP.html');
+}
 
 })
 
