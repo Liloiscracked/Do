@@ -8,45 +8,64 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="home.css" />
-    <script src="home.js"></script>
+    
   </head>
-  <body>
-    <header>
-      <nav class="topnav" id="myTopnav">
+  <div class="container">
+    <body>
+    
+      <header>
+        <!-- <nav class="topnav" id="myTopnav">
+          <h1>DO</h1>
+          <a href="#home" class="active">Home</a>
+          <a href="profile.html">Profile</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">Projects</a>
+          <a href="Signin.html">Signin</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </nav> -->
+       
+          <div class="menu-container" id="toggle">
+            <a href="#" class="menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
+          </div>
+        
+        
+        <div class="overlay" id="overlay">
+          <nav>
+            <ul>
+              <li><a href="#" class="a">Home</a></li>
+              <li><a href="#" class="a">About</a></li>
+              <li><a href="#" class="a">Blog</a></li>
+              <li><a href="#" class="a" >Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+  
+      <div class="title">
         <h1>DO</h1>
-        <a href="#home" class="active">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">Projects</a>
-        <a href="Signin.html">Signin</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </nav>
-    </header>
-
-    <div class="title">
-      <h1>DO</h1>
-    </div>
-
-    <div class="style">
-      <h2>Welcome to the best website that</h2>
-      <h3>will help you mange your indivsual and team tasks</h3>
-    </div>
-
-    <picture class="photo">
-      <img src="list.png" alt="" />
-    </picture>
-
-    <button onclick="window.location.href='sign_UP.html'" class="button">
-      <div>SingUp</div>
-    </button>
-
-    <section>
-      <div class="wave wave1"></div>
-      <div class="wave wave2"></div>
-      <div class="wave wave3"></div>
-      <div class="wave wave4"></div>
-    </section>
-  </body>
+      </div>
+  
+      <div class="style">
+        <h2>Welcome to the best website that</h2>
+        <h3>will help you mange your indivsual and team tasks</h3>
+      </div>
+  
+      <picture class="photo">
+        <img src="list.png" alt="" />
+      </picture>
+      <script src="home.js"></script>
+      <a href="login-signup\sign_UP.html"><button><div>Sign up</div></button></a>
+      
+      <!-- <section>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+      </section> -->
+      
+    </body>
+  </div>
+ 
 </html>
