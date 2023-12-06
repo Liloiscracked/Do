@@ -53,16 +53,22 @@ app.post("/sign_up",(req,res)=>{
       "email" : email,
       "password" : password
   }
-  db.collection('users').insertOne(data,(err,collection)=>{
-      if(err){
-          throw err;
+  async function Handle(data){  
+    try {
+      const query = data;
+      const document = await db.collection('users').findOne(query);
+      if (document){
+        console.log('Document exists:', document);
+        return res.redirect('sign_UP.html');
+      } else {
+        db.collection('users').insertOne(data);
+        return res.redirect('Home.html');
       }
-      console.log("Record Inserted Successfully");
-  });
-
-  return res.redirect('Home.html')
-
-
+    } finally {
+      console.log('Done');
+    }
+  }
+  Handle(data);
 })
 
 
