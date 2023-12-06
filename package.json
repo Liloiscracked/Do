@@ -1,7 +1,7 @@
 {
   "name": "swe-363",
   "version": "1.0.0",
-  "description": "",
+  "description": "Do is a web app that organizes work for individuals and teams",
   "main": "Cube.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +14,7 @@
   "dependencies": {
     "express": "^4.18.2",
     "llamaai": "^1.0.4",
-    "mongoose": "^8.0.1",
-    "nodemon": "^3.0.1"
+    "mongoose": "^8.0.2",
+    "nodemon": "^3.0.2"
   }
 }
