@@ -32,15 +32,22 @@ app.post("/signin",(req,res)=>{
       "email" : email,
       "password" : password
   }
-  //condition is to be tested
-  if(db.collection('user').find(data) === null){
-  return res.redirect('Signin.html')
-}
-else{
-  //How to add message??
-  return res.redirect('Home.html');
-}
-
+  async function Handle(data){  
+    try {
+      const query = data;
+      const document = await db.collection('users').findOne(query);
+      if (document){
+        console.log('Welcome !!!!!');
+        return res.redirect('Home.html');
+      } else {
+        console.log("Incorrect!!!!")
+        return res.redirect('Signin.html');
+      }
+    } finally {
+      console.log('Done');
+    }
+  }
+  Handle(data);
 })
 
 app.post("/sign_up",(req,res)=>{
