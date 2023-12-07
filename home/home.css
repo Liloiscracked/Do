@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
 html{
     background-color: rgb(255, 255, 255);
+    
     /* background-image: url(white-triangle-pattern-seamless-background-cover.jpg); */
    
 }
@@ -12,6 +15,7 @@ header{
 }
 body{
     margin: 0;
+    
 }
 .topnav {
     background-color: #0875e4;
@@ -348,6 +352,7 @@ body, .container1 {
 .menu i {
   transform: scale(1);
   transition: all 0.3s;
+  
 }
 
 .menu i:hover {
@@ -389,7 +394,7 @@ body, .container1 {
 
 nav {
   font-size: 3.2em;
-  font-family: "Titan One", san-serif;
+  font-family: sans-serif;
   position: relative;
   height: 70%;
   top: 50%;
