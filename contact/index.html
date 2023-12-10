@@ -2,13 +2,36 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Contact Form with SVG animation</title>
+  <title>Contact us</title>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Quicksand&amp;display=swap'><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
+	<header>
+       
+       
+          <div class="menu-container" id="toggle">
+            <a href="#" class="menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
+          </div>
+        
+        
+        <div class="overlay" id="overlay">
+          <nav>
+            <ul>
+              <li><a href="#" class="a">Home</a></li>
+              <li><a href="#" class="a">Projects</a></li>
+              <li><a href="#" class="a">Profile</a></li>
+              <li><a href="#" class="a" >Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 <!-- partial:index.partial.html -->
 <div class="container d-flex justify-content-center align-items-center">
 	
@@ -323,7 +346,7 @@
 		<h1 class="title text-center mb-4">Talk to Us</h1>
 
 			<!-- Name -->
-			<div class="form-group position-relative">
+			<div id="name" class="form-group position-relative">
 				<label for="formName" class="d-block">
 					<i class="icon" data-feather="user"></i>
 				</label>
@@ -331,7 +354,7 @@
 			</div>
 
 			<!-- E-mail -->
-			<div class="form-group position-relative">
+			<div id="email" class="form-group position-relative" >
 				<label for="formEmail" class="d-block">
 					<i class="icon" data-feather="mail"></i>
 				</label>
