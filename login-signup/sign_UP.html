@@ -6,11 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="sign_in.js"></script>
-    <script src="signup.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    
 </head>
 <body>
-
+<header>
+    <div class="menu-container" id="toggle">
+        <a href="#" class="menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      </div>
+    
+    
+    <div class="overlay" id="overlay">
+      <nav>
+        <ul>
+          <li><a href="#" class="a">Home</a></li>
+          <li><a href="#" class="a">Projects</a></li>
+          <li><a href="#" class="a">Profile</a></li>
+          <li><a href="#" class="a" >Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+</header>
     <main>
         <section class="form">
             <h1 class="form__title">Sign Up your Account</h1>
@@ -24,7 +43,7 @@
 
         
                 <label class="form-control__label">Password</label>
-                <div class="password-field">
+                <div id="password" class="password-field">
                     <input type="password" class="form-control" minlength="4" id="password" name="password">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
@@ -62,8 +81,10 @@
                     </div>
                 </div>
               </div>
-              <div class="ball__shadow"></div>
+              <div id="shadow" class="ball__shadow"></div>
         </section>
     </main>
+    <script src="sign_in.js"></script>
+    <script src="signup.js"></script>
 </body>
 </html>
