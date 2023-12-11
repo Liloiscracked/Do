@@ -1,0 +1,158 @@
+.container{
+    display: flex;
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+}
+
+.ProjectsContainer{
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    border: 1px black solid;
+    text-align: center;
+    border-radius: 20px;
+    overflow-y: auto;
+}
+#ProjectsList{
+    width: 400px;
+}
+
+#ProjectList div{
+    width: 400px;
+    font-size: x-large;
+    padding-top: 10px;
+}
+#ProjectList div:hover{
+    background-color: aqua;
+    font-size: xx-large;
+}
+
+#newProject{
+    padding: 10px;
+    color: blue;
+    font-size: x-large;
+}
+
+#newProject:hover{
+    background-color: aqua;
+    font-size: xx-large;
+}
+#ProjectInfo{
+    display: flex;
+    flex-direction: column; 
+    margin-left: 10px;
+    border: 1px black solid; 
+    border-radius: 20px;
+    width: 750px;
+    height: 868.5px;
+}
+#team{
+    text-align: center;
+    font-size: x-large;
+    height: 250px;
+    width: 250px;
+    overflow-y: auto;
+    border: 1px black solid;
+}
+#team div{padding-top: 10px;
+    border-top: 1px black solid ;
+}
+#team div:hover{
+    background-color: aqua;
+    font-size: xx-large;
+}
+
+#ProjTasks{
+    text-align: center;
+    font-size: x-large;
+    width: 250px;
+    height: 250px;
+    border: 1px black solid;
+    
+    overflow-y: auto;
+}
+#ProjTasks div{padding-top: 10px;
+border-top: 1px black solid ;
+
+}
+
+#ProjTasks div:hover{
+    background-color: aqua;
+    font-size: xx-large;
+}
+
+#charts{
+   width: 750px;
+}
+
+#profileAndTasks{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    width: 450px;
+}
+#UserInfo{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 450px;
+    height: 350px;
+    border: 1px black solid;
+    border-radius: 20px;
+}
+#PFP{
+    width: 100PX;
+    height: 100px;
+}
+
+#Userstats{
+    display: flex;
+    text-align: center;
+    width: 450px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#PersonalTasksCont{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    border: 1px black solid;
+    border-radius: 20px;
+    margin-top: 10px;
+    text-align: center;
+    height: 500px;
+}
+
+#TasksList{
+    width: 450px;
+    overflow-y: auto;
+}
+
+#TasksList div{
+    width: 450px;
+    font-size: x-large;
+    padding-top: 10px;
+}
+#TasksList div:hover{
+    background-color: aqua;
+    font-size: xx-large;
+}
+
+#newTask{
+    padding: 10px;
+    color: blue;
+    font-size: x-large;
+}
+
+#newTask:hover{
+    background-color: aqua;
+    font-size: xx-large;
+}
+
+
+
+
+
+
