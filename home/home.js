@@ -19,3 +19,20 @@ menu.addEventListener('click', () => {
     menuIcon.classList.toggle('fa-bars');
     menuIcon.classList.toggle('fa-times');
 });
+
+const $panels = document.querySelectorAll(".panel");
+console.log($panels);
+function removeActiveClasses(){
+  $panels.forEach(($panels)=>{
+    $panels.classList.remove("active");
+  })
+}
+$panels.forEach(($panels)=>{
+$panels.addEventListener('mouseover',()=>
+{
+  console.log("test");
+removeActiveClasses();
+$panels.classList.add("active");
+})
+})
+
