@@ -11,7 +11,7 @@ const menuItems = document.querySelector('#overlay');
 const menuContainer = document.querySelector('.menu-container');
 const menuIcon = document.querySelector('i');
 var animation = document.getElementById("ball");
-var password = document.getElementById("password");
+var password = document.getElementById("password1");
 var shadow = document.getElementById("shadow");
 menu.addEventListener('click', () => {
   console.log("hi");
