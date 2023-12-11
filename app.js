@@ -22,7 +22,29 @@ db.once('open', () => console.log("Connected to Database"))
 
 app.use(express.static('./login-signup'));
 app.use(express.static('./home'));
+app.use(express.static('./contact'));
 
+
+app.post("/contactus",(req,res)=>{
+  var data = {
+    "email":req.body.formEmail,
+    "name":req.body.formName,
+    "message":req.body.formMessage
+  };
+  async function Handle(data){  
+    try {
+      const query = data;
+      const document = await db.collection('users').findOne(query);
+      db.collection('messages').insertOne(data);
+      console.log("Messsage Sent !!!!");
+    } finally {
+      console.log('Done');
+      return res.redirect('Home.html');
+    }
+  }
+  Handle(data);
+
+})
 
 app.post("/signin",(req,res)=>{
   var email = req.body.email;

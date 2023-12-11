@@ -342,7 +342,7 @@
   -------------------------------------------------------------
   ------------------------------------------------------------>
 	
-	<form>
+	<form method="POST" action="/contactus">
 		<h1 class="title text-center mb-4">Talk to Us</h1>
 
 			<!-- Name -->
@@ -350,7 +350,7 @@
 				<label for="formName" class="d-block">
 					<i class="icon" data-feather="user"></i>
 				</label>
-				<input type="text" id="formName" class="form-control form-control-lg thick" placeholder="Name">
+				<input type="text" name="formName" id="formName" class="form-control form-control-lg thick" placeholder="Name">
 			</div>
 
 			<!-- E-mail -->
@@ -358,12 +358,12 @@
 				<label for="formEmail" class="d-block">
 					<i class="icon" data-feather="mail"></i>
 				</label>
-				<input type="email" id="formEmail" class="form-control form-control-lg thick" placeholder="E-mail">
+				<input type="email" id="formEmail" name = "formEmail" class="form-control form-control-lg thick" placeholder="E-mail">
 			</div>
 
 			<!-- Message -->
 			<div class="form-group message">
-				<textarea id="formMessage" class="form-control form-control-lg" rows="7" placeholder="Mensagem"></textarea>
+				<textarea id="formMessage" name="formMessage" class="form-control form-control-lg" rows="7" placeholder="Mensagem"></textarea>
 			</div>
 		
 			<!-- Submit btn -->
