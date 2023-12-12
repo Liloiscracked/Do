@@ -7,7 +7,7 @@
 </head>
 <link rel="stylesheet" href="Projects.css">
 <body>
-<div class="container">
+<!-- <div class="container"> -->
 
     <div class="ProjectsContainer">
         <div style="border-bottom: 1px black solid;">
@@ -28,57 +28,199 @@
         <div id="info">
             <h1 style="margin-left: 10px;" id = "ProjectName">Project 1</h1>
             <h2 style="margin-left: 10px;">Project description: </h2>
-            <p style="font-size: larger; padding-left: 60px;" id="Projectdesc">Description</p></div>
-            <div style="display: flex; text-align: center; justify-content: space-evenly;">
-                <div style="margin-left: 10px;">
-                <h1>Members</h1>
-                <div style="width: 250px;" id = "team">
-                   <div>Mohammed</div>
-                   <div>Ali</div> 
-                   <div>Mohammed</div>
-                   <div>Ali</div> <div>Mohammed</div>
-                   <div>Ali</div> <div>Mohammed</div>
-                   <div>Ali</div> 
-                </div>
-                </div>
-                <div>
-                    <h1>Tasks</h1>
-                <div id="ProjTasks">
-                   <div>take a shower</div>
-                   <div>Task2</div>   
-                   <div>take a shower</div>
-                   <div>Task2</div>   
-                   <div>take a shower</div>
-                   <div>Task2</div>   
-                   <div>take a shower</div>
-                   <div>Task2</div>   
-                </div>
-                </div>
-                </div>
-
-                <div id = "charts">
-                    
-                </div>
+            <p style="font-size: larger; padding-left: 60px;" id="Projectdesc">Description</p>
         </div>
-        <div id="profileAndTasks">
-            <div id="UserInfo">
-                <img id="PFP" src="PFP.jpeg">
-                <h2 id="Username">@user name</h2>
-                <div id="Userstats">
-                    <div>
-                        <h2 id="Tasksnum">10</h2>
-                        <h2>Tasks</h2>
-                    </div>
-                    <div>
-                        <h2 id="Projnum">20</h2>
-                        <h2>Projects</h2>
-                    </div>
-                </div>
-                <div style="display: flex; text-align: center; margin-top: 20px;">
-                <a href="">Edit info</a>
-                <a style="padding-left: 50px;" href="../login-signup/Signin.html">Sign out</a>
-                </div>
             </div>
+            <div id="right_panel">
+                <div class="wrap-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="sticky-col">Customer</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Enrolled</th>
+                        <th scope="col">Progress</th>
+                        <th scope="col">Date</th>
+                        <th scope="col" class="sticky-col sticky-col-right">Actions</th>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+                      <tr>
+                        <td class="sticky-col" scope="row" data-label="Customer">
+                          <div class="user__info">
+                            <label>
+                              <input type="checkbox">
+                              <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              </span>
+                            </label>
+                             <img class="user__photo" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                            <div>
+                              <div class="user__name">Lindsay Walton</div>
+                              <div class="user__email">lindsay@example.com</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td data-label="Status">
+                          <div class="user__badge">Enrolled</div>
+                        </td>
+                        <td data-label="Course">
+                          <span>HTML</span>
+                        </td>
+                        <td data-label="Enrolled">Member</td>
+                        <td data-label="Progress">
+                          <progress value="32" max="100"> 32% </progress>
+                        </td>
+                        <td data-label="Date">9/08/2023</td>
+                        <td data-label="Actions" class="sticky-col sticky-col-right">
+                          <a href="#" class="user__edit">Edit</a>
+                          </td>
+                          </tr>
+                      <tr>
+                        <td class="sticky-col" scope="row" data-label="Customer">
+                          <div class="user__info">
+                            <label>
+                              <input type="checkbox">
+                              <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              </span>
+                            </label>
+                             <img class="user__photo" src="https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg" alt="">
+                            <div>
+                              <div class="user__name">Marvin McKinney</div>
+                              <div class="user__email">marvin@example.com</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td data-label="Status">
+                          <div class="user__badge">Enrolled</div>
+                        </td>
+                        <td data-label="Course">
+                          <span>CSS</span>
+                        </td>
+                        <td data-label="Enrolled">Member</td>
+                        <td data-label="Progress">
+                          <progress value="56" max="100"> 56% </progress>
+                        </td>
+                        <td data-label="Date">3/13/2023</td>
+                        <td data-label="Actions" class="sticky-col sticky-col-right">
+                          <a href="#" class="user__edit">Edit</a>
+                          </td>
+                          </tr>
+                      <tr>
+                        <td class="sticky-col" scope="row" data-label="Customer">
+                          <div class="user__info">
+                            <label>
+                              <input type="checkbox">
+                              <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              </span>
+                            </label>
+                             <img class="user__photo" src="https://img.freepik.com/free-photo/female-looking-directly-into-camera_273609-12389.jpg?t=st=1698951187~exp=1698951787~hmac=56a4af748044a4b82323def79882a55ac39f150aea6e1738cba45a52f3e9563a" alt="">
+                            <div>
+                              <div class="user__name">Alma Lawson</div>
+                              <div class="user__email">alma@example.com</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td data-label="Status">
+                          <div class="user__badge user__badge_unpaid">Not paid</div>
+                        </td>
+                        <td data-label="Course">
+                          <span>Ruby on Rails</span>
+                        </td>
+                        <td data-label="Enrolled">Member</td>
+                        <td data-label="Progress">
+                          <progress value="12" max="100"> 12% </progress>
+                        </td>
+                        <td data-label="Date">10/02/2023</td>
+                        <td data-label="Actions" class="sticky-col sticky-col-right">
+                          <a href="#" class="user__edit">Edit</a>
+                          </td>
+                          </tr>
+                      <tr>
+                        <td class="sticky-col" scope="row" data-label="Customer">
+                          <div class="user__info">
+                            <label>
+                              <input type="checkbox">
+                              <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              </span>
+                            </label>
+                             <img class="user__photo" src="https://as2.ftcdn.net/v2/jpg/02/24/86/95/1000_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg" alt="">
+                            <div>
+                              <div class="user__name">Floyd Miles</div>
+                              <div class="user__email">floyd@example.com</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td data-label="Status">
+                          <div class="user__badge">Enrolled</div>
+                        </td>
+                        <td data-label="Course">
+                          <span>CSS</span>
+                        </td>
+                        <td data-label="Enrolled">Member</td>
+                        <td data-label="Progress">
+                          <progress value="100" max="100"> 100% </progress>
+                        </td>
+                        <td data-label="Date">6/12/2023</td>
+                        <td data-label="Actions" class="sticky-col sticky-col-right">
+                          <a href="#" class="user__edit">Edit</a>
+                          </td>
+                          </tr>
+                      <tr>
+                        <td class="sticky-col" scope="row" data-label="Customer">
+                          <div class="user__info">
+                            <label>
+                              <input type="checkbox">
+                              <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              </span>
+                            </label>
+                             <img class="user__photo" src="https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?t=st=1698950906~exp=1698951506~hmac=d7a71b36eec872667dc27ea767679dc74adf02bff3acb18a1b1523b63843fdfa" alt="">
+                            <div>
+                              <div class="user__name">Georgia Young</div>
+                              <div class="user__email">georgia@example.com</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td data-label="Status">
+                          <div class="user__badge user__badge_pending">Pending</div>
+                        </td>
+                        <td data-label="Course">
+                          <span>JavaScript</span>
+                        </td>
+                        <td data-label="Enrolled">Member</td>
+                        <td data-label="Progress">
+                          <progress value="10" max="100"> 10% </progress>
+                        </td>
+                        <td data-label="Date">9/29/2023</td>
+                        <td data-label="Actions" class="sticky-col sticky-col-right">
+                          <a href="#" class="user__edit">Edit</a>
+                          </td>
+                          </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <button id="btn_resize">
+                  <span></span>
+                </button>
+              </div>
+        <div id="profileAndTasks">
+            
             <div id="PersonalTasksCont">
                 <div style="border-bottom: 1px black solid;">
                     <h1>Personal Tasks list</h1>
@@ -92,7 +234,7 @@
             </div>
 
         </div>
-</div>  
-    
+
+    <script src="project.js"></script>
 </body>
 </html>
