@@ -1,6 +1,6 @@
-// create the schema to our collections (donor and recipient)
+// create the schema to our collections 
 const mongoose = require('mongoose');
-const donorSechema =  new mongoose.Schema({
+const usersSechema =  new mongoose.Schema({
     username: {
         type: String,
         required: true,
@@ -13,11 +13,11 @@ const donorSechema =  new mongoose.Schema({
         type:String,
         required: true,
     },
-    Date: {
-        type: Date,
-        required: true,
-        default:Date.now,
-    },
+    // Date: {
+    //     type: Date,
+    //     required: true,
+    //     default:Date.now,
+    // },
 });
-// apply the schema to our collections (donor and recipient)
-module.exports = mongoose.model("users",donorSechema);
+// apply the schema to our collections 
+module.exports = mongoose.model("users",usersSechema);

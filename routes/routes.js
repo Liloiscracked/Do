@@ -1,7 +1,7 @@
 //all routes will be managed here
 const express = require('express');
 const router = express.Router();
-const donor = require('../models/users');
+const users = require('../models/users');
 const multer = require('multer');
 // image upload
 var storage = multer.diskStorage({
@@ -41,7 +41,10 @@ router.post("/add",upload,(req,res)=>{
 router.get('/users',(req,res)=>{
     res.send("All users");
 });
+//get all  
 router.get('/',(req,res)=>{
-    res.render('index',{title:"lilo page"});
+    var data = users.findOne({name:'hola'});
+    console.log(data);
+    res.render('index',{title:'hola',users: data})
 })
 module.exports = router;
