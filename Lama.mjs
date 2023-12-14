@@ -8,7 +8,7 @@ const output = await replicate.run(
     {
       input: {
         top_p: 1,
-        prompt: "how can i make meatballs and pasta",
+        prompt: "who invented calculus?",
         max_tokens: 500,
         temperature: 0.75,
         repetition_penalty: 1.2

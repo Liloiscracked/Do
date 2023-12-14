@@ -26,7 +26,7 @@ app.use((req,res,next)=>{
   next();
 });
 //in routes are all the routes !!!!
-app.use("",require("./routes/routes"));
+// app.use("",require("./routes/routes"));
 
 //set template engine 
 app.set('view engine','ejs');
@@ -41,10 +41,8 @@ var db = mongoose.connection;
 db.on('error', () => console.log("Error in Connecting to Database"));
 db.once('open', () => console.log("Connected to Database"))
 
-app.use(express.static('./contact'));
 
-app.use(express.static('./login-signup'));
-app.use(express.static('./home'));
+app.use(express.static('./public'));
 // app.use(express.static('./contact'));
 
 
@@ -123,13 +121,16 @@ app.post("/sign_up",(req,res)=>{
   Handle(data);
 })
 
+app.get('/Sign_UP.html',(req,res)=>{
+  return res.sendFile('Sign_UP.html')
+})
 
-// app.get("/",(req,res)=>{
-//   res.set({
-//       "Allow-access-Allow-Origin": '*'
-//   })
-//   return res.redirect('Sign_UP.html');
-// }).listen(3000);
+app.get("/",(req,res)=>{
+  res.set({
+      "Allow-access-Allow-Origin": '*'
+  })
+  return res.redirect('Sign_UP.html');
+});
 app.listen(3000,()=>{
   console.log("Listening on PORT 3000");
 })
