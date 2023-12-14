@@ -1,42 +1,33 @@
-import LlamaAI from 'llamaai';
-const apiToken = 'INSERT_YOUR_API_TOKEN_HERE';
-const llamaAPI = new LlamaAI(apiToken);
-const apiRequestJson = {
-    "messages": [
-        {"role": "user", "content": "What is the weather like in Boston?"},
-    ],
-    "functions": [
-        {
-            "name": "get_current_weather",
-            "description": "Get the current weather in a given location",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "location": {
-                        "type": "string",
-                        "description": "The city and state, e.g. San Francisco, CA",
-                    },
-                    "days": {
-                        "type": "number",
-                        "description": "for how many days ahead you wants the forecast",
-                    },
-                    "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]},
-                },
-            },
-            "required": ["location", "days"],
-        }
-    ],
-    "stream": false,
-    "function_call": "get_current_weather",
-   };
- 
- 
-    llamaAPI.run(apiRequestJson)
-      .then(response => {
-        // Process the API response here
-        response.messages
-      })
-      .catch(error => {
-        // Handle any errors here
-      });
- 
+const Replicate = require('replicate');
+
+const replicate = new Replicate({
+  auth: 'LL-YSdlzLaBN52xqDZIpKeCbZS7yGgBEpdq4koIqdP62pHZFzsrjkGvpmcKzEfnHbwM',
+});
+
+const input = {
+  prompt: "What is 2+2",
+};
+
+// Use async/await to handle the stream
+(async () => {
+  try {
+    // Iterate over the stream and log each event
+    for await (const event of replicate.stream("meta/llama-2-70b-chat", { input })) {
+      console.log(event);
+    }
+
+    // Create a prediction
+    const prediction = await replicate.predictions.create({
+      model: "meta/llama-2-70b-chat",
+      input: {
+        prompt: "..."
+      },
+      webhook: "https://example.com/your-webhook",
+      webhook_events_filter: ["completed"]
+    });
+
+    console.log('Prediction:', prediction);
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+})();
