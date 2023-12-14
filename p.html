@@ -4,7 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Task List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100&display=swap');
+/* Global Styles */
+
         :root {
             --dark: #374151;
             --darker: #1F2937;
@@ -25,9 +32,14 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            color: #FFF;
-            background-color: #a2b6a0;
-            background-image: linear-gradient(to right, #8b8f8a, #1d98cc );
+            font-family: 'Poppins', sans-serif;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+  margin: 0;
+  background-color: #F3F3F3;
+  background-image: linear-gradient(0deg, transparent 24%, #E1E1E1 25%, #E1E1E1 26%, transparent 27%,transparent 74%, #E1E1E1 75%, #E1E1E1 76%, transparent 77%,transparent),
+      linear-gradient(90deg, transparent 24%, #E1E1E1 25%, #E1E1E1 26%, transparent 27%,transparent 74%, #E1E1E1 75%, #E1E1E1 76%, transparent 77%,transparent);
+  background-size: 55px 55px;
         }
         
         header {
@@ -35,18 +47,24 @@
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
+            
         }
         
         header h1{ 
+            font-family: 'Poppins', sans-serif;
             font-size: 2.5rem;
             font-weight: 550;
-            color:rgb(208, 24, 100);
+            color:rgb(50, 141, 202);
             margin-bottom: 0.6rem;
             margin-top: 3rem;
+            text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.5);
+            
         }
         
         header h1 span{
-            color: aqua;
+            color: rgb(253, 255, 255);
+           
+          
         }
         
         #new-task-form {
@@ -62,11 +80,12 @@
         
         #new-task-input {
             flex: 1 1 0%;
-            background-color: #000000;
+            background-color: #ffffff;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);;
             padding: 1rem;
             border-radius: 1rem;
             margin-right: 1rem;
-            color: var(--light);
+            color: var(--darker);
             font-size: 1.25rem;
         }
         
@@ -75,10 +94,11 @@
         }
         
         #new-task-submit {
-            color: var(--pink);
+            color: #1F2937;
             font-size: 1.5rem;
             font-weight: 700;
-            background-image: linear-gradient(to right, var(--pink), var(--purple));
+            background-image: linear-gradient(to right, var(--grey), var(--dark));
+            text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             cursor: pointer;
@@ -101,20 +121,34 @@
         }
         
         .task-list {
+            
             padding: 1rem;
+
+text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.5);
         }
         
         .task-list h2 {
+            font-family: 'Poppins', sans-serif;
+            color: #2182f0;
             font-size: 1.5rem;
             font-weight: 400;
-            color: var(--darker);
+           
             margin-bottom: 1rem;
         }
         
         #tasks .task {
             display: flex;
             justify-content: space-between;
-            background-color: var(--darkest);
+            background-color: var(--darker);
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        #done-task .task{
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--darker);
             padding: 1rem;
             border-radius: 1rem;
             margin-bottom: 1rem;
@@ -159,7 +193,7 @@
         }
         
         .task .actions .edit {
-            background-image: linear-gradient(to right, var(--pink), var(--purple));
+            background-image: linear-gradient(to right, var(--grey), var(--dark));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -183,12 +217,170 @@
         .check{
             color: green;
         }
+
+
+        .menu-container {
+  font-family: 'Poppins', sans-serif;
+  background-color: #076cd1;
+  border-radius: 100%;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: -120px;
+  top: -120px;
+  transition: all 0.3s;
+}
+
+.menu-container.full-menu {
+  border-radius: 0;
+  background-color: #076cd1;
+  padding: 0 !important;
+  position: absolute;
+  width: 100%;
+  height: 1080px;
+  left: 0;
+  top: 0;
+}
+
+.menu-container.full-menu .menu {
+  top: 40px;
+  left: 40px;
+}
+
+.menu {
+  color: #151515;
+  font-size: 3.5em;
+  position: absolute;
+  top: 160px;
+  left: 160px;
+  z-index: 100;
+  transition: all 0.3s;
+}
+
+.menu i {
+  transform: scale(1);
+  transition: all 0.3s;
+  
+}
+
+.menu i:hover {
+  transform: scale(1.2);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.overlay.open {
+  opacity: 0.9;
+  visibility: visible;
+  height: 100%;
+}
+
+.overlay.open li {
+  animation: fadeInRight 0.5s ease forwards;
+}
+
+.overlay.open li:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+
+.overlay.open li:nth-of-type(3) {
+  animation-delay: 0.45s;
+}
+
+.overlay.open li:nth-of-type(4) {
+  animation-delay: 0.5s;
+}
+
+nav {
+  font-size: 3.2em;
+  font-family: sans-serif;
+  position: relative;
+  height: 70%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 400;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+
+li {
+  display: block;
+  height: 25%;
+  height: calc(100% / 4);
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+}
+
+.a {
+  display: block;
+  position: relative;
+  color: #151515;
+  text-decoration: none;
+  overflow: hidden;
+  transform: scale(1);
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+a:hover,
+a:focus,
+a:active {
+  transform: scale(1.2);
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+
+
     </style>
 </head>
 <body>
 	
 	<header>
-       
+        <div class="menu-container" id="toggle">
+            <a href="#" class="menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
+          </div>
+        
+        
+        <div class="overlay" id="overlay">
+          <nav>
+            <ul>
+              <li><a href="#" class="a">Home</a></li>
+              <li><a href="#" class="a">Projects</a></li>
+              <li><a href="#" class="a">Profile</a></li>
+              <li><a href="#" class="a" >Contact</a></li>
+            </ul>
+          </nav>
+        </div>
 		<h1><span>sample</span> task list</h1>
         
 		<form id="new-task-form">
@@ -226,86 +418,110 @@
 
 			</div>
             <h2>Completed tasks</h2>
+            <div id="done-task"></div>
 			</div>
 		</section>
 	</main>
     <script>
-        window.addEventListener('load', () => {
-            const form = document.querySelector("#new-task-form");
-            const input = document.querySelector("#new-task-input");
-            const list_el = document.querySelector("#tasks");
-        
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-        
-                const task = input.value;
-        
-                const task_el = document.createElement('div');
-                task_el.classList.add('task');
-        
-                const task_content_el = document.createElement('div');
-                task_content_el.classList.add('content');
-        
-                task_el.appendChild(task_content_el);
-        
-                const task_input_el = document.createElement('input');
-                task_input_el.classList.add('text');
-                task_input_el.type = 'text';
-                task_input_el.value = task;
-                task_input_el.setAttribute('readonly', 'readonly');
-        
-                task_content_el.appendChild(task_input_el);
-        
-                const task_actions_el = document.createElement('div');
-                task_actions_el.classList.add('actions');
-                
-                const task_edit_el = document.createElement('button');
-                task_edit_el.classList.add('edit');
-                task_edit_el.innerText = 'Edit';
-        
-                const task_delete_el = document.createElement('button');
-                task_delete_el.classList.add('delete');
-                task_delete_el.innerText = 'Delete';
+    window.addEventListener('load', () => {
+    const form = document.querySelector("#new-task-form");
+    const input = document.querySelector("#new-task-input");
+    const listEl = document.querySelector("#tasks");
+    const doneListEl = document.querySelector("#done-task");
 
-                const task_check_el = document.createElement('button');
-                task_check_el.classList.add('check');
-                task_check_el.innerText = 'Not yet';
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-                task_actions_el.appendChild(task_check_el);
-                task_actions_el.appendChild(task_edit_el);
-                task_actions_el.appendChild(task_delete_el);
-        
-                task_el.appendChild(task_actions_el);
-        
-                list_el.appendChild(task_el);
-        
-                input.value = '';
-        
-                task_edit_el.addEventListener('click', (e) => {
-                    if (task_edit_el.innerText.toLowerCase() == "edit") {
-                        task_edit_el.innerText = "Save";
-                        task_input_el.removeAttribute("readonly");
-                        task_input_el.focus();
-                    } else {
-                        task_edit_el.innerText = "Edit";
-                        task_input_el.setAttribute("readonly", "readonly");
-                    }
-                });
-        
-                task_delete_el.addEventListener('click', (e) => {
-                    list_el.removeChild(task_el);
-                });
+        const task = input.value.trim(); // Trimmed the input value
 
-                task_check_el.addEventListener('click',(e)=>{
-                    if(task_check_el.innerText === 'Done'){
-                        task_check_el.innerText = 'Not yet'
-                    }
-                    else{
-                        task_check_el.innerText = 'Done'
-                    }
-                })
+        // Check if the input value is not empty
+        if (task !== '') {
+            const taskEl = document.createElement('div');
+            taskEl.classList.add('task');
+
+            const taskContentEl = document.createElement('div');
+            taskContentEl.classList.add('content');
+
+            taskEl.appendChild(taskContentEl);
+
+            const taskInputEl = document.createElement('input');
+            taskInputEl.classList.add('text');
+            taskInputEl.type = 'text';
+            taskInputEl.value = task;
+            taskInputEl.setAttribute('readonly', 'readonly');
+
+            taskContentEl.appendChild(taskInputEl);
+
+            const taskActionsEl = document.createElement('div');
+            taskActionsEl.classList.add('actions');
+
+            const taskEditEl = document.createElement('button');
+            taskEditEl.classList.add('edit');
+            taskEditEl.innerText = 'Edit';
+
+            const taskDeleteEl = document.createElement('button');
+            taskDeleteEl.classList.add('delete');
+            taskDeleteEl.innerText = 'Delete';
+
+            const taskCheckEl = document.createElement('button');
+            taskCheckEl.classList.add('check');
+            taskCheckEl.innerText = 'Not yet';
+
+            taskActionsEl.appendChild(taskCheckEl);
+            taskActionsEl.appendChild(taskEditEl);
+            taskActionsEl.appendChild(taskDeleteEl);
+
+            taskEl.appendChild(taskActionsEl);
+
+            listEl.appendChild(taskEl);
+
+            input.value = '';
+
+            taskEditEl.addEventListener('click', () => {
+                if (taskEditEl.innerText.toLowerCase() == "edit") {
+                    taskEditEl.innerText = "Save";
+                    taskInputEl.removeAttribute("readonly");
+                    taskInputEl.focus();
+                } else {
+                    taskEditEl.innerText = "Edit";
+                    taskInputEl.setAttribute("readonly", "readonly");
+                }
             });
-        });
+
+            taskDeleteEl.addEventListener('click', () => {
+                listEl.removeChild(taskEl);
+                doneListEl.removeChild(taskEl); // Remove from both lists if present
+            });
+
+            taskCheckEl.addEventListener('click', () => {
+                if (taskCheckEl.innerText === 'DONE') {
+                    taskCheckEl.innerText = 'Not yet';
+                    // Move the task back to the "Not yet" container
+                    listEl.appendChild(taskEl);
+                } else {
+                    taskCheckEl.innerText = 'Done';
+                    // Move the task to the "Done" container
+                    doneListEl.appendChild(taskEl);
+                }
+            });
+        }
+    });
+});
+
+
+
+const menu = document.querySelector('#toggle');
+const menuItems = document.querySelector('#overlay');
+const menuContainer = document.querySelector('.menu-container');
+const menuIcon = document.querySelector('i');
+
+menu.addEventListener('click', () => {
+  console.log("hi");
+    menuItems.classList.toggle('open');
+    menuContainer.classList.toggle('full-menu');
+    menuIcon.classList.toggle('fa-bars');
+    menuIcon.classList.toggle('fa-times');
+});
     </script>
 </body>
 </html>
